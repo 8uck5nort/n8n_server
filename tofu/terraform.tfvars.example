@@ -1,0 +1,24 @@
+# Copy to tofu/terraform.tfvars (gitignored) and fill in lab values.
+# You can instead export TF_VAR_proxmox_api_token and omit the token here.
+
+proxmox_endpoint  = "https://pve.example.lab:8006/"
+proxmox_api_token = "tofu@pve!poc=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+proxmox_insecure  = true
+
+proxmox_node   = "pve"
+template_vm_id = 9000
+vm_id          = 120
+vm_name        = "n8n-poc"
+
+vm_cpu_cores = 2
+vm_memory_mb = 4096
+disk_datastore = "local-lvm"
+network_bridge = "vmbr0"
+# vlan_id      = 10
+
+vm_ipv4        = "dhcp"
+vm_user        = "ubuntu"
+ssh_public_key = "ssh-ed25519 AAAA... comment"
+
+# Set true only if the template has qemu-guest-agent installed and enabled.
+qemu_agent = false
